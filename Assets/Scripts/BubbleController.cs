@@ -7,7 +7,8 @@ public class BubbleController : MonoBehaviour
     public bool showSpeechBubble = false;
     public float minSpawnInterval = 2f;
     public GameObject bubble;
-    private SpriteRenderer bubbleRenderer;
+
+    private bool playerIn = false;
 
     private float timer = 0f;
     private void Start()
@@ -16,6 +17,22 @@ public class BubbleController : MonoBehaviour
         bubble.gameObject.SetActive(false);
 
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log(other.tag);
+        if (other.CompareTag("Player"))
+        {
+            playerIn = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerIn = false;
+        }
+    }
     void Update()
     {
         timer += Time.deltaTime;
@@ -23,6 +40,14 @@ public class BubbleController : MonoBehaviour
         {
             showSpeechBubble = true;
         }
+
+        if (playerIn && Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("tried to interact");
+            showSpeechBubble = false;
+            timer = 0f;
+        }
+
         if (!showSpeechBubble)
         {
             if (bubble != null)

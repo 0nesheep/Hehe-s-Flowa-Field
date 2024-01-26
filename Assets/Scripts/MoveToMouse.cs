@@ -2,12 +2,11 @@ using UnityEngine;
 using System.Collections;
 public class moveToMouse : MonoBehaviour
 {
-    private Vector2 targetPosition;
+    private Vector3 targetPosition;
 
-    private float speed = 5f;
+    private float speed = 3f;
     private Rigidbody2D rb;
-    private float smoothTime = 0.3f;
-    Vector2 currentVelocity;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,7 +16,10 @@ public class moveToMouse : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
         }
-        transform.position = Vector2.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothTime, speed);
+        //transform.position = Vector2.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothTime, speed);
+        Vector3 direction = targetPosition - transform.position;
+        rb.MovePosition(rb.position + ((Vector2)direction * speed * Time.deltaTime));
     }
 }
