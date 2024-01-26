@@ -6,9 +6,11 @@ public class FlowerSpawner : MonoBehaviour
 {
     public GameObject flowerPrefeb;
     
-    public float maxSpawnInterval = 60f;
+    public float minSpawnInterval = 30f;
     public float radius = 5f;
     public Vector2 spawnAreaSize = new Vector2(10f, 5f);
+
+    public float requestInterval = 30f;
 
     private float timer = 0f;
 
@@ -18,7 +20,7 @@ public class FlowerSpawner : MonoBehaviour
 
         float randomInterval = Random.Range(0, 31);
 
-        if (timer >= maxSpawnInterval - randomInterval)
+        if (timer >= 5f)
         {
             SpawnFlower();
             timer = 0f;
