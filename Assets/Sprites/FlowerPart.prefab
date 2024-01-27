@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3105086896409864281}
   - component: {fileID: 2054283559320824974}
+  - component: {fileID: 8198573705444616480}
   m_Layer: 0
   m_Name: FlowerPart
   m_TagString: Untagged
@@ -88,3 +89,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &8198573705444616480
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274650697042876453}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 2be004c307dcb5c4b80ca10d1ac1f32b, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

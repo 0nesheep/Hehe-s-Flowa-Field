@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2308414884362341329}
   - component: {fileID: 1050972655147176453}
   - component: {fileID: 7574923865052084948}
+  - component: {fileID: 3735695174159388691}
   m_Layer: 0
   m_Name: Flower
   m_TagString: Untagged
@@ -53,8 +54,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showSpeechBubble: 0
-  minSpawnInterval: 2
+  minSpawnInterval: 10
   bubble: {fileID: 6188743557188119096}
+  flowerPart: {fileID: 1330043898800646741}
 --- !u!61 &1050972655147176453
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84,7 +86,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -121,6 +123,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &3735695174159388691
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097361820207094166}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &271689251052188272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,7 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054283559320824974, guid: 96641429cf4db464dbc3790346380e39, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2054283559320824974, guid: 96641429cf4db464dbc3790346380e39, type: 3}
       propertyPath: m_SortingLayerID
@@ -228,31 +257,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1274650697042876453, guid: 96641429cf4db464dbc3790346380e39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8215151450039491408}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96641429cf4db464dbc3790346380e39, type: 3}
 --- !u!1 &1330043898800646741 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1274650697042876453, guid: 96641429cf4db464dbc3790346380e39, type: 3}
   m_PrefabInstance: {fileID: 271689251052188272}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &8215151450039491408
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330043898800646741}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2be004c307dcb5c4b80ca10d1ac1f32b, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!224 &2941492652194601513 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3105086896409864281, guid: 96641429cf4db464dbc3790346380e39, type: 3}
@@ -276,7 +287,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 2c22ace7c34294e4f9b0cecf8321cc01, type: 3}
     - target: {fileID: 2374626161329523379, guid: 755ce28f0bafa2646a9c52282e35afa0, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2374626161329523379, guid: 755ce28f0bafa2646a9c52282e35afa0, type: 3}
       propertyPath: m_SortingLayerID

@@ -20,7 +20,13 @@ public class PlayerScript : MonoBehaviour
     public void water()
     {
         animator.SetBool("isWet", false);
+        animator.SetBool("isWatering", true);
 
+    }
+
+    public void finishWater()
+    {
+        animator.SetBool("isWatering", false);
     }
 
     public bool checkIsWet()

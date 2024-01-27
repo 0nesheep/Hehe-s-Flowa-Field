@@ -5,17 +5,23 @@ using UnityEngine;
 public class BubbleController : MonoBehaviour
 {
     public bool showSpeechBubble = false;
-    public float minSpawnInterval = 2f;
+    public float minSpawnInterval = 10f;
     public GameObject bubble;
+    public GameObject flowerPart;
     private PlayerScript playerScript;
 
     private bool playerIn = false;
 
     private float timer = 0f;
+
+    private float timeIgnored = 0f;
     private void Start()
     {
         bubble = transform.Find("Bubble").gameObject;
         bubble.gameObject.SetActive(false);
+
+        flowerPart = transform.Find("FlowerPart").gameObject;
+
         GameObject player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerScript>();
 
@@ -41,6 +47,8 @@ public class BubbleController : MonoBehaviour
         if (timer > minSpawnInterval)
         {
             showSpeechBubble = true;
+            Debug.Log(timeIgnored);
+            minSpawnInterval = minSpawnInterval * 2;
         }
 
         if (playerIn && Input.GetKeyDown(KeyCode.Space))
@@ -51,6 +59,7 @@ public class BubbleController : MonoBehaviour
                 showSpeechBubble = false;
                 timer = 0f;
                 playerScript.water();
+                timeIgnored = 0f;
             }
         }
 
@@ -66,7 +75,20 @@ public class BubbleController : MonoBehaviour
             {
                 bubble.gameObject.SetActive(true);
             }
-        }
+            timeIgnored += Time.deltaTime;
+            if (timeIgnored >= 30f)
+            {
+                killPlant();
+            }
+        
+        } 
+            
 
+    }
+
+    private void killPlant()
+    {
+        Destroy(this.gameObject);
+        Debug.Log("something died");
     }
 }

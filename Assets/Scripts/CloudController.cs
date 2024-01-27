@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CloudController : MonoBehaviour
 {
-    private GameObject cloud;
+    private Vector2 direction;
     private PlayerScript playerScript;
     private float speed = 0.5f;
     private Rigidbody2D rb;
@@ -17,9 +17,6 @@ public class CloudController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         GameObject player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerScript>();
-
-        cloud = this.gameObject;
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
