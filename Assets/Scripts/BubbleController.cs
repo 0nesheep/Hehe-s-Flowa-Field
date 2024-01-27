@@ -7,6 +7,7 @@ public class BubbleController : MonoBehaviour
     public bool showSpeechBubble = false;
     public float minSpawnInterval = 2f;
     public GameObject bubble;
+    private PlayerScript playerScript;
 
     private bool playerIn = false;
 
@@ -15,11 +16,12 @@ public class BubbleController : MonoBehaviour
     {
         bubble = transform.Find("Bubble").gameObject;
         bubble.gameObject.SetActive(false);
+        GameObject player = GameObject.FindWithTag("Player");
+        playerScript = player.GetComponent<PlayerScript>();
 
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.tag);
         if (other.CompareTag("Player"))
         {
             playerIn = true;
@@ -43,9 +45,13 @@ public class BubbleController : MonoBehaviour
 
         if (playerIn && Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("tried to interact");
-            showSpeechBubble = false;
-            timer = 0f;
+            if (playerScript.checkIsWet())
+            {
+                Debug.Log("tried to interact");
+                showSpeechBubble = false;
+                timer = 0f;
+                playerScript.water();
+            }
         }
 
         if (!showSpeechBubble)

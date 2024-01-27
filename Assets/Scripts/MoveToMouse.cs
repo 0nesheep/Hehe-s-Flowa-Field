@@ -9,11 +9,14 @@ public class moveToMouse : MonoBehaviour
 
     private float speed = 3f;
     private Rigidbody2D rb;
-    
+
+    private SpriteRenderer spriteRenderer;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -30,7 +33,17 @@ public class moveToMouse : MonoBehaviour
             //transform.position = Vector2.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothTime, speed);
             Vector3 direction = targetPosition - transform.position;
             rb.MovePosition(rb.position + ((Vector2)direction * speed * Time.deltaTime));
-            if (Vector3.Distance(transform.position, targetPosition) < 0.05f)
+
+            if (targetPosition.x > transform.position.x)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if (targetPosition.x < transform.position.x)
+            {
+                spriteRenderer.flipX = false;
+            }
+
+            if (Vector3.Distance(transform.position, targetPosition) < 10.05f)
             {
                 isMoving = false;
             }

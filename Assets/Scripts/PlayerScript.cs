@@ -4,7 +4,29 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Animator animator = null;
+
+    public void startDrink()
+    {
+        animator.SetBool("isDrinkingCloud", true);
+    }
+
+    public void finishDrink()
+    {
+        animator.SetBool("isDrinkingCloud", false);
+        animator.SetBool("isWet", true);
+    }
+
+    public void water()
+    {
+        animator.SetBool("isWet", false);
+
+    }
+
+    public bool checkIsWet()
+    {
+        return animator.GetBool("isWet");
+    }
     void Start()
     {
         
