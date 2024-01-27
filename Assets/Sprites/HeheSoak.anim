@@ -21,9 +21,19 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 2adac41aaf961944fa6b9757be6a492b, type: 3}
+      value: {fileID: 21300000, guid: 26d3a65c8c880d64eab1a4484688841b, type: 3}
     - time: 0.1
-      value: {fileID: 21300000, guid: 2adac41aaf961944fa6b9757be6a492b, type: 3}
+      value: {fileID: 21300000, guid: e93fb85f29db605408e0e023dd8dc5d8, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: a3750a003722afa4aab4c658ae894859, type: 3}
+    - time: 0.3
+      value: {fileID: 21300000, guid: 2239731ccae45ba42967a8831b9f5a81, type: 3}
+    - time: 0.4
+      value: {fileID: 21300000, guid: 145b2eca91f3d894e9f270d9c2a0a123, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: 71e1bfa64400800458799bc4febeb17c, type: 3}
+    - time: 1.0166667
+      value: {fileID: 21300000, guid: 71e1bfa64400800458799bc4febeb17c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,14 +56,19 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 2adac41aaf961944fa6b9757be6a492b, type: 3}
-    - {fileID: 21300000, guid: 2adac41aaf961944fa6b9757be6a492b, type: 3}
+    - {fileID: 21300000, guid: 26d3a65c8c880d64eab1a4484688841b, type: 3}
+    - {fileID: 21300000, guid: e93fb85f29db605408e0e023dd8dc5d8, type: 3}
+    - {fileID: 21300000, guid: a3750a003722afa4aab4c658ae894859, type: 3}
+    - {fileID: 21300000, guid: 2239731ccae45ba42967a8831b9f5a81, type: 3}
+    - {fileID: 21300000, guid: 145b2eca91f3d894e9f270d9c2a0a123, type: 3}
+    - {fileID: 21300000, guid: 71e1bfa64400800458799bc4febeb17c, type: 3}
+    - {fileID: 21300000, guid: 71e1bfa64400800458799bc4febeb17c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.11666667
+    m_StopTime: 1.0333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -73,7 +88,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.1
+  - time: 0.5
     functionName: finishDrink
     data: 
     objectReferenceParameter: {fileID: 0}
