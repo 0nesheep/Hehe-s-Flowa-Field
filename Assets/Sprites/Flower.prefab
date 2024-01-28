@@ -164,11 +164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054283559320824974, guid: 96641429cf4db464dbc3790346380e39, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2054283559320824974, guid: 96641429cf4db464dbc3790346380e39, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1771944673
+      value: -30040483
       objectReference: {fileID: 0}
     - target: {fileID: 3105086896409864281, guid: 96641429cf4db464dbc3790346380e39, type: 3}
       propertyPath: m_Pivot.x
@@ -287,11 +287,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 2c22ace7c34294e4f9b0cecf8321cc01, type: 3}
     - target: {fileID: 2374626161329523379, guid: 755ce28f0bafa2646a9c52282e35afa0, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2374626161329523379, guid: 755ce28f0bafa2646a9c52282e35afa0, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1771944673
+      value: -30040483
       objectReference: {fileID: 0}
     - target: {fileID: 8787952233216810477, guid: 755ce28f0bafa2646a9c52282e35afa0, type: 3}
       propertyPath: m_LocalScale.x
