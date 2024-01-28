@@ -9,6 +9,8 @@ public class BubbleController : MonoBehaviour
     public GameObject bubble;
     public GameObject flowerPart;
     private PlayerScript playerScript;
+    private FlowerController flowerControl;
+    private bool isPermaDeath = false;
 
     private bool playerIn = false;
 
@@ -24,6 +26,8 @@ public class BubbleController : MonoBehaviour
 
         GameObject player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerScript>();
+
+        flowerControl = this.GetComponent<FlowerController>();
 
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -47,38 +51,43 @@ public class BubbleController : MonoBehaviour
         if (timer > minSpawnInterval)
         {
             showSpeechBubble = true;
-            Debug.Log(timeIgnored);
             minSpawnInterval = minSpawnInterval * 2;
         }
 
-        if (playerIn && Input.GetKeyDown(KeyCode.Space))
+        if (playerIn && Input.GetKeyDown(KeyCode.Space) && !isPermaDeath)
         {
             if (playerScript.checkIsWet())
             {
-                Debug.Log("tried to interact");
                 showSpeechBubble = false;
                 timer = 0f;
                 playerScript.water();
                 timeIgnored = 0f;
             }
         }
+        if (!isPermaDeath) 
+        {
 
-        if (!showSpeechBubble)
-        {
-            if (bubble != null)
+            if (!showSpeechBubble)
             {
-                bubble.gameObject.SetActive(false);
+                if (bubble != null)
+                {
+                    bubble.gameObject.SetActive(false);
+                }
             }
-        } else
-        {
-            if (bubble != null)
+            else
             {
-                bubble.gameObject.SetActive(true);
-            }
-            timeIgnored += Time.deltaTime;
-            if (timeIgnored >= 30f)
-            {
-                killPlant();
+                if (bubble != null)
+                {
+                    bubble.gameObject.SetActive(true);
+                }
+                timeIgnored += Time.deltaTime;
+                Debug.Log(timeIgnored);
+                if (timeIgnored >= 2f)
+                {
+                    killPlant();
+                    bubble.gameObject.SetActive(false);
+                    isPermaDeath = true;
+                }
             }
         
         } 
@@ -88,7 +97,7 @@ public class BubbleController : MonoBehaviour
 
     private void killPlant()
     {
-        Destroy(this.gameObject);
-        Debug.Log("something died");
+        Debug.Log("tried to die");
+        flowerControl.startDying();
     }
 }

@@ -20,7 +20,6 @@ public class LayerOrderScript : MonoBehaviour
     private void UpdateLayerOrder()
     {
         Bounds bounds = spriteRenderer.bounds;
-        Debug.Log(bounds.min.y);
         spriteRenderer.sortingOrder = Mathf.RoundToInt(bounds.min.y * -100f);
         if (transform.parent)
         {

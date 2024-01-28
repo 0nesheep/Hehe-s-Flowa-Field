@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlowerSpawner : MonoBehaviour
 {
     public GameObject flowerPrefeb;
+    private Collider2D flowerCollider;
     
     public float minSpawnInterval = 30f;
     public float radius = 5f;
@@ -13,6 +14,11 @@ public class FlowerSpawner : MonoBehaviour
     public float requestInterval = 30f;
 
     private float timer = 0f;
+
+    private void Start()
+    {
+        flowerCollider = flowerPrefeb.GetComponent<Collider2D>();
+    }
 
     void Update()
     {
@@ -32,7 +38,14 @@ public class FlowerSpawner : MonoBehaviour
         float randomX = Random.Range(-spawnAreaSize.x / 2f, spawnAreaSize.x / 2f);
         float randomY = Random.Range(-spawnAreaSize.y / 2f, spawnAreaSize.y / 2f);
 
-        Vector3 randomPosition = transform.position + new Vector3(randomX, randomY, 0f);
+        Vector3 randomPosition = new Vector3(randomX, randomY, 0f);
+        while (Physics2D.OverlapBox(randomPosition, flowerCollider.bounds.size, 0f))
+        {
+            randomX = Random.Range(-spawnAreaSize.x / 2f, spawnAreaSize.x / 2f);
+            randomY = Random.Range(-spawnAreaSize.y / 2f, spawnAreaSize.y / 2f);
+            randomPosition = new Vector3(randomX, randomY, 0f);
+
+        }
 
         Instantiate(flowerPrefeb, randomPosition, Quaternion.identity);
     }

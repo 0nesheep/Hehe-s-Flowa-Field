@@ -27,6 +27,7 @@ public class moveToMouse : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalScale = transform.localScale;
         eyePos = eyes.localPosition;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
     void Update()
     {
