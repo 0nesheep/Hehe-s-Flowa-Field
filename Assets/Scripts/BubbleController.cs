@@ -82,7 +82,7 @@ public class BubbleController : MonoBehaviour
                 }
                 timeIgnored += Time.deltaTime;
                 Debug.Log(timeIgnored);
-                if (timeIgnored >= 2f)
+                if (timeIgnored >= 30f)
                 {
                     killPlant();
                     bubble.gameObject.SetActive(false);

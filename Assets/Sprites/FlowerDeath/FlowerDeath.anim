@@ -17,21 +17,67 @@ AnimationClip:
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves: []
+  m_PPtrCurves:
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: 21300000, guid: e3faf39e25f64284d8c42595b3840803, type: 3}
+    - time: 0.1
+      value: {fileID: 21300000, guid: fcbd496744faf0f40a5d26f5fe0e1aab, type: 3}
+    - time: 0.31666666
+      value: {fileID: 21300000, guid: 198e515f67ed941409fe0f8d48851dac, type: 3}
+    - time: 0.41666666
+      value: {fileID: 21300000, guid: 93253728e547a3944b63ec20247a6356, type: 3}
+    - time: 0.51666665
+      value: {fileID: 21300000, guid: 8a0368052dbb9e0469571b94f946cbe2, type: 3}
+    - time: 0.73333335
+      value: {fileID: 21300000, guid: ab27c3a8dd649c649962955353cb581a, type: 3}
+    - time: 0.8333333
+      value: {fileID: 21300000, guid: 7830c669bf3899c49a4585fb1b274086, type: 3}
+    - time: 0.93333334
+      value: {fileID: 21300000, guid: 4dfdedda9707aaf40a35af084e5ea972, type: 3}
+    - time: 1.15
+      value: {fileID: 21300000, guid: 50fa7efcf0bb6404e99af34885f6d63a, type: 3}
+    - time: 1.25
+      value: {fileID: 21300000, guid: 59991283b29fba946ba3c1a2076403c3, type: 3}
+    attribute: m_Sprite
+    path: FlowerPart
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings: []
-    pptrCurveMapping: []
+    genericBindings:
+    - serializedVersion: 2
+      path: 4180614193
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: e3faf39e25f64284d8c42595b3840803, type: 3}
+    - {fileID: 21300000, guid: fcbd496744faf0f40a5d26f5fe0e1aab, type: 3}
+    - {fileID: 21300000, guid: 198e515f67ed941409fe0f8d48851dac, type: 3}
+    - {fileID: 21300000, guid: 93253728e547a3944b63ec20247a6356, type: 3}
+    - {fileID: 21300000, guid: 8a0368052dbb9e0469571b94f946cbe2, type: 3}
+    - {fileID: 21300000, guid: ab27c3a8dd649c649962955353cb581a, type: 3}
+    - {fileID: 21300000, guid: 7830c669bf3899c49a4585fb1b274086, type: 3}
+    - {fileID: 21300000, guid: 4dfdedda9707aaf40a35af084e5ea972, type: 3}
+    - {fileID: 21300000, guid: 50fa7efcf0bb6404e99af34885f6d63a, type: 3}
+    - {fileID: 21300000, guid: 59991283b29fba946ba3c1a2076403c3, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 1.2666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -50,4 +96,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1.25
+    functionName: finishDying
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

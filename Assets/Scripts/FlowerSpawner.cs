@@ -11,6 +11,8 @@ public class FlowerSpawner : MonoBehaviour
     public float radius = 5f;
     public Vector2 spawnAreaSize = new Vector2(28f, 30f);
 
+    public static int totalSpawns = 0;
+
     public float requestInterval = 30f;
 
     private float timer = 0f;
@@ -47,7 +49,13 @@ public class FlowerSpawner : MonoBehaviour
 
         }
 
+        totalSpawns++;
         Instantiate(flowerPrefeb, randomPosition, Quaternion.identity);
+    }
+
+    public static int getSpawnCount()
+    {
+        return totalSpawns;
     }
 
     private void OnDrawGizmos()

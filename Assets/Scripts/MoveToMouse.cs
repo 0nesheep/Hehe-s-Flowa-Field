@@ -76,7 +76,6 @@ public class moveToMouse : MonoBehaviour
         if (!isMoving)
         {
             animator.SetBool("isWalking", false);
-            Debug.Log("Stopped walking");
         }
     }
 }

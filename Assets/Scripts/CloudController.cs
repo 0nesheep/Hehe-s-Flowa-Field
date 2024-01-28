@@ -37,9 +37,8 @@ public class CloudController : MonoBehaviour
     {
         if (playerIn && Input.GetKeyDown(KeyCode.Space) && !playerScript.checkIsWet())
         {
-            Debug.Log("tried to interact with cloud");
             playerScript.startDrink();
-            Destroy(this.gameObject, 3f);
+            Destroy(this.gameObject);
 
         }
         MoveClouds();

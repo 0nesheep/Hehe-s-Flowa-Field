@@ -30,4 +30,9 @@ public class FlowerController : MonoBehaviour
         Debug.Log(deathCount);
 
     }
+
+    public static int getDeaths()
+    {
+        return deathCount;
+    }
 }
