@@ -33,4 +33,9 @@ public class FlowerController : MonoBehaviour
     {
         return deathCount;
     }
+
+    public void finishSpawn()
+    {
+        animator.SetBool("isSpawning", false);
+    }
 }
