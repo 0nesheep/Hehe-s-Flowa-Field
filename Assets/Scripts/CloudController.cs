@@ -10,6 +10,8 @@ public class CloudController : MonoBehaviour
     private float speed = 0.5f;
     private Rigidbody2D rb;
 
+    private Animator animator;
+
     private bool playerIn = false;
 
     private void Start()
@@ -17,6 +19,7 @@ public class CloudController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         GameObject player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerScript>();
+        animator = GetComponent<Animator>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -38,7 +41,7 @@ public class CloudController : MonoBehaviour
         if (playerIn && Input.GetKeyDown(KeyCode.Space) && !playerScript.checkIsWet())
         {
             playerScript.startDrink();
-            Destroy(this.gameObject);
+            animator.SetBool("isAbsorbing", true);
 
         }
         MoveClouds();
@@ -53,5 +56,10 @@ public class CloudController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    public void finishDeath()
+    {
+        Destroy(this.gameObject);
     }
 }

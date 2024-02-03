@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: -5930400073924885727}
   - component: {fileID: -7927167962355289284}
   - component: {fileID: 8129656434376643627}
-  - component: {fileID: 3189355741056162800}
   - component: {fileID: 9134518853377075760}
+  - component: {fileID: 6217103156566304544}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Cloud
@@ -173,7 +173,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &3189355741056162800
+--- !u!111 &9134518853377075760
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2216010609276078728}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 70646ac302dc80f4181db8ab2ad2f952, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &6217103156566304544
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -194,18 +209,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &9134518853377075760
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2216010609276078728}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 70646ac302dc80f4181db8ab2ad2f952, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
