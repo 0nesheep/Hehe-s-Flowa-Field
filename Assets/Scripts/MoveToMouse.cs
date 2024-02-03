@@ -29,27 +29,34 @@ public class moveToMouse : MonoBehaviour
         eyePos = eyes.localPosition;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
-    void Update()
+    private void Update()
     {
-
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition = transform.InverseTransformPoint(mousePosition);
         Vector3 eyesDirection = mousePosition - eyePos;
-        /*if (isFlipped)
-        {
-            eyesDirection.x = -eyesDirection.x;
-        }*/
+
         Vector3 temp = Vector2.ClampMagnitude(eyesDirection, maxDistance);
         Vector3 eyeTarget = eyePos + temp;
         eyes.localPosition = eyeTarget;
-       
+
         if (Input.GetMouseButtonDown(0))
         {
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             isMoving = true;
             animator.SetBool("isWalking", true);
-            
+
         }
+
+    }
+    void FixedUpdate()
+    {
+
+        
+        /*if (isFlipped)
+        {
+            eyesDirection.x = -eyesDirection.x;
+        }*/
+        
 
         if (isMoving)
         {

@@ -19,12 +19,16 @@ public class LayerOrderScript : MonoBehaviour
 
     private void UpdateLayerOrder()
     {
-        Bounds bounds = spriteRenderer.bounds;
-        spriteRenderer.sortingOrder = Mathf.RoundToInt(bounds.min.y * -100f);
         if (transform.parent)
         {
             SpriteRenderer parentSpriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
             spriteRenderer.sortingOrder = parentSpriteRenderer.sortingOrder + 1;
         }
+        else
+        {
+            Bounds bounds = spriteRenderer.bounds;
+            spriteRenderer.sortingOrder = Mathf.RoundToInt(bounds.min.y * -100f);
+        }
+        
     }
 }
