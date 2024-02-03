@@ -9,7 +9,7 @@ public class FlowerSpawner : MonoBehaviour
     
     public float minSpawnInterval = 30f;
     public float radius = 5f;
-    public Vector2 spawnAreaSize = new Vector2(28f, 30f);
+    public Vector2 spawnAreaSize = new Vector2(20f, 18f);
 
     public static int totalSpawns = 0;
 

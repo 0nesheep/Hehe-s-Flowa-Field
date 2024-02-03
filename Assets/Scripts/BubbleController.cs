@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
+using UnityEditor;
 using UnityEngine;
 
 public class BubbleController : MonoBehaviour
 {
+    private static int inCount = 0;
     public bool showSpeechBubble = false;
     public float minSpawnInterval = 10f;
     public GameObject bubble;
@@ -17,6 +20,8 @@ public class BubbleController : MonoBehaviour
     private float timer = 0f;
 
     private float timeIgnored = 0f;
+
+    private bool isPlayerWet;
     private void Start()
     {
         bubble = transform.Find("Bubble").gameObject;
@@ -26,15 +31,17 @@ public class BubbleController : MonoBehaviour
 
         GameObject player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerScript>();
-
+        isPlayerWet = playerScript.checkIsWet();
         flowerControl = this.GetComponent<FlowerController>();
 
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerIn = true;
+            isPlayerWet = playerScript.checkIsWet();
+
         }
     }
 
@@ -53,16 +60,14 @@ public class BubbleController : MonoBehaviour
             showSpeechBubble = true;
             minSpawnInterval = minSpawnInterval * 2;
         }
-
-        if (playerIn && Input.GetKeyDown(KeyCode.Space) && !isPermaDeath)
+        if (isPlayerWet && playerIn && Input.GetKeyDown(KeyCode.Space) && showSpeechBubble)
         {
-            if (playerScript.checkIsWet())
-            {
-                showSpeechBubble = false;
-                timer = 0f;
-                playerScript.water();
-                timeIgnored = 0f;
-            }
+            inCount++;
+            showSpeechBubble = false;
+            timer = 0f;
+            playerScript.water();
+            timeIgnored = 0f;
+            
         }
         if (!isPermaDeath) 
         {
