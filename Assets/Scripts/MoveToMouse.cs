@@ -47,7 +47,22 @@ public class moveToMouse : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            isMoving = false;
+        }
+
     }
+    
+    void OnCollisionStay2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Boundary"))
+        {
+            isMoving = false;
+        }
+    }
+
     void FixedUpdate()
     {
 

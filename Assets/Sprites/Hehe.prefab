@@ -244,7 +244,6 @@ GameObject:
   - component: {fileID: 3670200151748574729}
   - component: {fileID: -3304633865010889087}
   - component: {fileID: 6377835765290374817}
-  - component: {fileID: 1176153203038180859}
   - component: {fileID: 2178197277440160932}
   m_Layer: 0
   m_Name: Hehe
@@ -460,20 +459,6 @@ MonoBehaviour:
   animator: {fileID: 7141955294649918563}
   eyes: {fileID: 9145480161356220272}
 --- !u!114 &6377835765290374817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7774527037752499013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586147d9f8400df41a7372e23f18ec85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 7141955294649918563}
-  eyes: {fileID: 5746046877387005179}
---- !u!114 &1176153203038180859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

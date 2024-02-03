@@ -13,7 +13,6 @@ public class DetectPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("player in");
         if (other.CompareTag("Player"))
         {
             playerIn = true;

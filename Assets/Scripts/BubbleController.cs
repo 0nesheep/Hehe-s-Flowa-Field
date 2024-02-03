@@ -81,7 +81,6 @@ public class BubbleController : MonoBehaviour
                     bubble.gameObject.SetActive(true);
                 }
                 timeIgnored += Time.deltaTime;
-                Debug.Log(timeIgnored);
                 if (timeIgnored >= 30f)
                 {
                     killPlant();
@@ -97,7 +96,6 @@ public class BubbleController : MonoBehaviour
 
     private void killPlant()
     {
-        Debug.Log("tried to die");
         flowerControl.startDying();
     }
 }

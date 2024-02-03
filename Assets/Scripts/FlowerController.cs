@@ -19,7 +19,6 @@ public class FlowerController : MonoBehaviour
     }
     public void startDying()
     {
-        Debug.Log("started dying");
         animator.SetBool("isDying", true);
     }
     public void finishDying()
@@ -27,7 +26,6 @@ public class FlowerController : MonoBehaviour
         animator.SetBool("isDying", false);
         animator.SetBool("isDead", true);
         deathCount++;
-        Debug.Log(deathCount);
 
     }
 

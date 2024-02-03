@@ -6,14 +6,14 @@ public class CloudSpawner : MonoBehaviour
 {
     public GameObject cloudPrefab;
 
-    public float minSpawnInterval = 10f;
-    public float radius = 5f;
-    public Vector2 spawnAreaSize = new Vector2(28f, 15f);
-    public int maxClouds = 3;
+    public float minSpawnInterval;
+    public float radius;
+    public Vector2 spawnAreaSize;
+    public int maxClouds;
 
     private int cloudCount = 0;
 
-    public float requestInterval = 30f;
+    public float requestInterval;
 
     private float timer = 0f;
 
