@@ -33,11 +33,12 @@ public class CloudSpawner : MonoBehaviour
 
     void SpawnCloud()
     {
+        Debug.Log(cloudCount);
         if (cloudCount < maxClouds)
         {
             float randomY = Random.Range(-spawnAreaSize.y / 2f, spawnAreaSize.y / 2f);
 
-            Vector3 randomPosition = transform.position + new Vector3(-14f, randomY, 0f);
+            Vector3 randomPosition = transform.position + new Vector3(-10f, randomY, 0f);
 
             Instantiate(cloudPrefab, randomPosition, Quaternion.identity);
         }

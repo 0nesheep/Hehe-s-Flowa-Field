@@ -26,9 +26,9 @@ public class FlowerSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        float randomInterval = Random.Range(0, 31);
+        float randomInterval = Random.Range(10, 31);
 
-        if (timer >= 5f)
+        if (timer >= randomInterval)
         {
             SpawnFlower();
             timer = 0f;

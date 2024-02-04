@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class BubbleController : MonoBehaviour
 {
+    private AudioSource audioSource;
+    public AudioClip spawnSound;
+
     private static int inCount = 0;
     public bool showSpeechBubble = false;
     public float minSpawnInterval = 10f;
@@ -24,6 +27,8 @@ public class BubbleController : MonoBehaviour
     private bool isPlayerWet;
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         bubble = transform.Find("Bubble").gameObject;
         bubble.gameObject.SetActive(false);
 
@@ -59,6 +64,7 @@ public class BubbleController : MonoBehaviour
         {
             showSpeechBubble = true;
             minSpawnInterval = minSpawnInterval * 2;
+            audioSource.PlayOneShot(spawnSound);
         }
         if (isPlayerWet && playerIn && Input.GetKeyDown(KeyCode.Space) && showSpeechBubble)
         {
